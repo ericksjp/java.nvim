@@ -8,6 +8,7 @@ function rename_options.setup(opts)
         opts = {
             enable = true,
             nvimtree = true,
+            oil = true,
             write_and_close = false,
         }
     end
@@ -20,11 +21,13 @@ function rename_options.setup(opts)
         opts.nvimtree = true
     end
 
+    if opts.oil == nil then
+        opts.oil = true
+    end
 
     if opts.write_and_close == nil then
         opts.write_and_close = false
     end
-
 
     options = opts
 end

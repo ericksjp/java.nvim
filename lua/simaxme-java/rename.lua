@@ -142,8 +142,11 @@ function java_rename.setup(opts)
     if opts.nvimtree then
         require("simaxme-java.rename.nvim-tree").setup({})
     end
-end
 
+    if opts.oil then
+        require("simaxme-java.rename.oil")
+    end
+end
 
 return java_rename
 
