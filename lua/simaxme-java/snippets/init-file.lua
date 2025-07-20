@@ -47,23 +47,23 @@ function init_file_snippets.setup()
         "java",
         {
             ls.s(
-                "class",
+                "jclass",
                 fmt("{}{}\n}}", { f(function() return generateString("class") end), i(1) })
             ),
 
 
             ls.s(
-                "aclass",
+                "jaclass",
                 fmt("{}{}\n}}", { f(function() return generateString("abstract class") end), i(1) })
             ),
 
             ls.s(
-                "interface",
+                "jinterface",
                 fmt("{}{}\n}}", { f(function() return generateString("interface") end), i(1) })
             ),
 
             ls.s(
-                "enum",
+                "jenum",
                 fmt("{}{}\n}}", { f(function() return generateString("enum") end), i(1) })
             )
         }
