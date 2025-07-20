@@ -60,6 +60,8 @@ end
 -- @param new_name the old/current file path that should be absolute or relative to the project root
 -- @param whether the file rename is associated with a package rename
 function java_rename.on_rename_file(old_name, new_name, is_package_rename)
+    local originaBuffer = vim.api.nvim_get_current_buf()
+
     -- extract the folder names from the file names, removes the last part of the path
     local old_folder = old_name:gsub("%/([%w%.]*)$", "")
     local new_folder = new_name:gsub("%/([%w%.]*)$", "")
@@ -126,7 +128,7 @@ function java_rename.on_rename_file(old_name, new_name, is_package_rename)
         end
     end
 
-    buffer.open(new_name)
+    buffer.open(originaBuffer)
 end
 
 -- setup the java rename plugin with options, see README.md for further information
